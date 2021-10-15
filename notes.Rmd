@@ -1,0 +1,23 @@
+---
+title: "notes and to-dos"
+author: "Will Wheeler"
+date: "10/15/2021"
+output: rmarkdown::html_vignette
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+LCR sample summary scraping currently can grab up to three summaries per PWSID/contaminant: 90th percentile, 95th percentile, and number of AL exceedances (see https://azsdwis.azdeq.gov/DWW_EXT/JSP/LeadAndCopperSampleSummaryResults.jsp?tinwsys_is_number=971&tinwsys_st_code=AZ&begin_date=&end_date=&counter=0 -- but you might have to expand from default number of summaries shown). The number of exceedances is dropped because the sample result is 'null' but we can't tell the 90th vs the 95 percentiles.
+
+Scraped LCR summaries don't appear to have indicators for non-detects 
+
+I'm still inconsiten wrt terminology of samples vs summaries (ECHO refers to samples when they really mean sample summaries)
+
+There are negative values in there. Do we need to look up state reporting requirements or can we assume they are non-detects?
+
+
+
+
+

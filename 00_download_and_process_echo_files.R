@@ -54,6 +54,7 @@ echo_lcr_samples <- read_csv(here::here("data", "raw", "SDWA_LCR_SAMPLES.csv"),
 source("echo_systems.R")
 
 echo_lcr_samples <- echo_lcr_samples %>%
+  mutate(state = substr(PWSID, 1, 2)) %>%
   left_join(echo_systems)
 
 save(echo_lcr_samples, file = here::here("data", "R_data_files", "echo_lcr_samples.Rda"))

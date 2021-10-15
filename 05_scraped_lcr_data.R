@@ -20,7 +20,8 @@ read_summaries <- function(filename){
   
   df <- df %>%
     select(-rownum) %>%
-    mutate(sample_result = as.numeric(sample_result), num_samples = as.integer(num_samples))
+    mutate(sample_result = as.numeric(sample_result), num_samples = as.integer(num_samples),
+           state = substr(pwsid, 1, 2))
   
 }
 

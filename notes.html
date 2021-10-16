@@ -50,10 +50,11 @@
 
 
 
-<p>LCR sample summary scraping currently can grab up to three summaries per PWSID/contaminant: 90th percentile, 95th percentile, and number of AL exceedances (see <a href="https://azsdwis.azdeq.gov/DWW_EXT/JSP/LeadAndCopperSampleSummaryResults.jsp?tinwsys_is_number=971&amp;tinwsys_st_code=AZ&amp;begin_date=&amp;end_date=&amp;counter=0" class="uri">https://azsdwis.azdeq.gov/DWW_EXT/JSP/LeadAndCopperSampleSummaryResults.jsp?tinwsys_is_number=971&amp;tinwsys_st_code=AZ&amp;begin_date=&amp;end_date=&amp;counter=0</a> – but you might have to expand from default number of summaries shown). The number of exceedances is dropped because the sample result is ‘null’ but we can’t tell the 90th vs the 95 percentiles.</p>
+<p>LCR sample summary scraping currently can grab up to three summaries per PWSID/contaminant: 90th percentile, 95th percentile, and number of AL exceedances (see <a href="https://azsdwis.azdeq.gov/DWW_EXT/JSP/LeadAndCopperSampleSummaryResults.jsp?tinwsys_is_number=971&amp;tinwsys_st_code=AZ&amp;begin_date=&amp;end_date=&amp;counter=0" class="uri">https://azsdwis.azdeq.gov/DWW_EXT/JSP/LeadAndCopperSampleSummaryResults.jsp?tinwsys_is_number=971&amp;tinwsys_st_code=AZ&amp;begin_date=&amp;end_date=&amp;counter=0</a> – but you might have to expand from default number of summaries shown). The number of exceedances is dropped because the sample result is ‘null’ but we can’t tell the 90th vs the 95 percentiles. Need to go through each state and make sure we know what we get.</p>
 <p>Scraped LCR summaries don’t appear to have indicators for non-detects</p>
 <p>I’m still inconsiten wrt terminology of samples vs summaries (ECHO refers to samples when they really mean sample summaries)</p>
 <p>There are negative values in there. Do we need to look up state reporting requirements or can we assume they are non-detects?</p>
+<p>How to test for sampling out? Direct tests, bunching or Ghanem paper, Benford’s Law (how to account for censoring?).</p>
 
 
 

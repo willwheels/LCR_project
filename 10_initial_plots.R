@@ -35,14 +35,16 @@ echo_lcr_sample_counts <- echo_lcr_samples %>%
   count(sort = TRUE)
   
 
-load( here::here("data", "R_data_files", "scraped_lcr_summaries.Rda"))
-
-
-unique(scraped_lcr_summaries$contaminant_name)
 
 head(echo_lcr_sample_counts, 20)
 
 print("Wes and I don't think there should be more than one")
+
+
+load( here::here("data", "R_data_files", "scraped_lcr_summaries.Rda"))
+
+
+unique(scraped_lcr_summaries$contaminant_name)
 
 scraped_lcr_summary_counts <- scraped_lcr_summaries %>%
   group_by(pwsid, sampling_end_date, sampling_start_date) %>%
@@ -103,7 +105,7 @@ scraped_data_to_combine <- scraped_lcr_summaries %>%
 
 combined_sample_data <- rbind(echo_data_to_combine, scraped_data_to_combine)
 
-ggplot(combined_sample_data %>% filter(sample_result > .005, sample_result <= .025),
+ggplot(combined_sample_data %>% filter(sample_result >= .00, sample_result <= .025),
        aes(x = sample_result)) +
   geom_histogram(binwidth = .001) +
   labs(title = "LCR Sample Summaries", caption = "16 scraped states, sample years not aligned") +
